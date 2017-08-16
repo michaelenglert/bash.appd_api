@@ -95,11 +95,15 @@ function login {
   echo "$XCSRFTOKEN"
 }
 
+function testingMethod {
+  $CURL_DEFAULT -b cookie.txt -H "X-CSRF-TOKEN: $XCSRFTOKEN" $CONTROLLER_PREFIX$CONTROLLER_HOST:$CONTROLLER_PORT/controller/restui/flowMapUiService/flowmaps/APPLICATION/175
+}
+
 checkCurl
 getOptions $@
 checkOptions
 login
-
+testingMethod
 rm -rf cookie.txt
 
 exit 0
