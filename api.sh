@@ -2,7 +2,7 @@
 
 CURL_DEFAULT='curl -L '
 
-function checkCurl() {
+function checkCurl {
   which curl &> /dev/null
   if [[ $? != 0 ]]; then
     echo "curl is not installed - exiting"
