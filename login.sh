@@ -11,6 +11,11 @@ function login {
     $CONTROLLER_PREFIX$CONTROLLER_HOST:$CONTROLLER_PORT/controller/auth?action=login)
   if [[ "${LOGIN_RESPONSE/200 OK}" != "$LOGIN_RESPONSE" ]]; then
     echo "Login Successful"
+  else
+    echo "Login Error"
+    exit 1
   fi
   XCSRFTOKEN=$(tail -1 cookie.txt | awk 'NF>1{print $NF}')
 }
+
+login

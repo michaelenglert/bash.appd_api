@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURL_DEFAULT='curl -L '
+CURL_DEFAULT='curl -L --connect-timeout 10'
 
 function checkCurl {
   which curl &> /dev/null
@@ -70,7 +70,12 @@ function checkOptions {
 }
 
 function usage {
-  echo -e "api.sh\t-u <CONTROLLER_USER>\n\t(-p <CONTROLLER_PASSWORD>) will be prompted if not provided\n\t-h <CONTROLLER_HOST\n\t(-P <CONTROLLER_PORT>) Optional\n\t(-s <CONTROLLER_SSL>) Optional Default: false\n\t(-t <CONTROLLER_TENANT>) Optional Default: customer1"
+  echo -e "$0\t-u <CONTROLLER_USER>\n\t\
+            (-p <CONTROLLER_PASSWORD>) will be prompted if not provided\n\t\
+            -h <CONTROLLER_HOST\n\t\
+            (-P <CONTROLLER_PORT>) Optional - Default: 8090/8181(ssl)\n\t\
+            (-s <CONTROLLER_SSL>) Optional - Default: false\n\t\
+            (-t <CONTROLLER_TENANT>) Optional - Default: customer1"
   exit 1
 }
 
@@ -83,3 +88,7 @@ function doneDone {
   rm -rf cookie.txt
   exit 0
 }
+
+checkCurl
+getOptions $@
+checkOptions
