@@ -72,7 +72,7 @@ function checkOptions {
 function usage {
   echo -e "$0\t-u <CONTROLLER_USER>\n\t\
             (-p <CONTROLLER_PASSWORD>) will be prompted if not provided\n\t\
-            -h <CONTROLLER_HOST\n\t\
+            -c <CONTROLLER_HOST>\n\t\
             (-P <CONTROLLER_PORT>) Optional - Default: 8090/8181(ssl)\n\t\
             (-s <CONTROLLER_SSL>) Optional - Default: false\n\t\
             (-t <CONTROLLER_TENANT>) Optional - Default: customer1"
