@@ -11,7 +11,7 @@ function checkCurl {
 }
 
 function getOptions {
-  while getopts ":u:p:c:P:s:t" opt;
+  while getopts ":u:p:c:P:s:t:" opt;
   do
    case "${opt}" in
      u) CONTROLLER_USER=${OPTARG}
