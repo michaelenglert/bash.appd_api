@@ -85,7 +85,7 @@ function askPassword {
 }
 
 function doneDone {
-  rm -rf cookie.txt
+  rm -rf headers.txt
   exit 0
 }
 
