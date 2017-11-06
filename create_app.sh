@@ -4,7 +4,8 @@ function apiCall {
   $CURL_DEFAULT -b cookie.txt \
                 -X POST \
                 -H "X-CSRF-TOKEN: $XCSRFTOKEN" \
-                -H "Content-Type: application/json;charset=UTF-8" \
+                -H "Cookie: JSESSIONID=$JSESSIONID; X-CSRF-TOKEN=$XCSRFTOKEN" \
+                -H "Content-Type: application/json" \
                 -H "Accept: application/json, text/plain, */*" \
                 -d "{ \
                       \"name\": \"$APP_NAME\",\
