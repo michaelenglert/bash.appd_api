@@ -7,7 +7,7 @@ function apiCall {
                 -H "Cookie: JSESSIONID=$JSESSIONID; X-CSRF-TOKEN=$XCSRFTOKEN" \
                 -H "Content-Type: application/json" \
                 -H "Accept: application/json, text/plain, */*" \
-                $CONTROLLER_PREFIX$CONTROLLER_HOST:$CONTROLLER_PORT/restui/event_reactor/getAllEventReactorsForApplication/$APP_ID
+                $CONTROLLER_PREFIX$CONTROLLER_HOST:$CONTROLLER_PORT/restui/policy/getActionsListViewData/$APP_ID
 }
 
 function readInput {
